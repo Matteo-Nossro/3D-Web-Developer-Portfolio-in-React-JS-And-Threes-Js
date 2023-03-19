@@ -15,28 +15,25 @@ const Computers = ({ isMobile }) => {
   return (
       // Toutes les balises viennent de react-three-fiber
       //https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
-      <mesh>
+
+    <mesh>
         <hemisphereLight intensity={0.15} groundColor='black' />
         <spotLight
             position={[-20, 50, 10]}
             angle={0.12}
             penumbra={1}
-            intensity={20}
+            intensity={1}
             castShadow
             shadow-mapSize={1024}
         />
         <pointLight intensity={1} />
-        {/*<ambientLight intensity={1} />*/}
         <primitive   // représente le bureau et l'ordinateur (le modèle 3D)
             object={computer.scene}
             scale={isMobile ? 0.7 : 0.75}
-            // scale={isMobile ? 0.7 : 2.2}
             position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-            // position={isMobile ? [0, -3, -2.2] : [0, -3.25, 0]}
-
             rotation={[-0.01, -0.2, -0.1]}
         />
-      </mesh>
+    </mesh>
   );
 };
 
@@ -44,7 +41,7 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
+    //Ajouter un écouteur pour modifier la taille de l'écran
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
     // Set the initial value of the `isMobile` state variable
