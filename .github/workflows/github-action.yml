@@ -1,0 +1,13 @@
+name: deploy
+on:
+  - push
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+#    env:
+#      IMAGE_NAME: "mynode:19"
+    steps:
+#      - uses: actions/checkout@v3 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
+#      - run: docker image build --tag="${IMAGE_NAME}" ./
+#      - run: docker container run "${IMAGE_NAME}" npm run lint
+      - run : echo "Bonjour 💛"
